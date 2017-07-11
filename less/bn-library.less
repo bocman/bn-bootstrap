@@ -1,0 +1,390 @@
+﻿@glowing-text-color: #ddd;
+
+html, body {
+    height: 100%;
+
+    .content-wrapper {
+        position: relative;
+        min-height: 85%;
+    }
+
+    footer {
+        position: relative;
+    }
+}
+
+#cookie-law-wrapper {
+    z-index: 123456;
+    position: relative;
+}
+
+
+/*
+    Add glowing text shadow to text
+    - extend it in element
+    - &:extend(.glowing-text all);
+*/
+.glowing-text {
+    text-shadow: 2px 2px 4px @glowing-text-color;
+}
+
+
+/* Zoom in - Zoom out on image hover effect
+    - extend it on img parent
+    - &:extend(.img-hover-zoom-effect all);
+*/
+.img-hover-zoom-effect {
+    .img-wrapper {
+        overflow: hidden;
+
+        img, .img, .image {
+            max-width: 100%;
+            -moz-transition: all 0.8s;
+            -webkit-transition: all 0.3s;
+            transition: all 0.8s;
+
+            &:hover {
+                -moz-transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/* Animated transition of border on element on hover
+    - extend it on element, on which would you like to apply the effect
+    - &:extend(.border-transition-on-hover all);
+*/
+.border-transition-on-hover {
+    -webkit-transition: border 0.9s;
+
+    &:hover {
+        //on element add hover method, and set color for transition on hover
+        -webkit-transition: border 0.9s;
+    }
+}
+
+
+.embedded-gallery-preview {
+    position: relative;
+
+    &.embedded {
+        margin-top: 0px;
+        padding-top: 0;
+    }
+
+    .gall-wrapper {
+        &:extend(.img-hover-zoom-effect all);
+        margin-top: 30px;
+
+        .img-wrapper {
+            display: inline-block;
+            width: 49.80%;
+            margin-right: -4px;
+            margin-bottom: -6px;
+
+            .img {
+                background-size: cover !important;
+                background-position: center center !important;
+                height: 360px;
+
+
+                @media (min-width: 320px) and (max-width: 529px) {
+                    height: 100px !important;
+                }
+
+                @media (min-width: 530px) and (max-width: 660px) {
+                    height: 200px !important;
+                }
+
+                @media (min-width: 665px) and (max-width: 1000px) {
+                    height: 260px !important;
+                }
+            }
+        }
+    }
+
+    .gall-wrapper-4 {
+        &:extend(.img-hover-zoom-effect all);
+        margin-top: 30px;
+
+        .img-wrapper {
+            display: inline-block;
+            width: 49.80%;
+            margin-right: -4px;
+            margin-bottom: -6px;
+
+            .img {
+                background-size: cover !important;
+                background-position: center center !important;
+                height: 360px;
+
+
+                @media (min-width: 320px) and (max-width: 529px) {
+                    height: 100px !important;
+                }
+
+                @media (min-width: 530px) and (max-width: 660px) {
+                    height: 200px !important;
+                }
+
+                @media (min-width: 665px) and (max-width: 1000px) {
+                    height: 260px !important;
+                }
+            }
+        }
+    }
+
+    .gall-wrapper-6 {
+        &:extend(.img-hover-zoom-effect all);
+        margin-top: 30px;
+
+        .img-wrapper {
+            display: inline-block;
+            width: 32.333333%;
+            margin-right: -4px;
+            margin-bottom: -6px;
+
+            .img {
+                background-size: cover !important;
+                background-position: center center !important;
+                height: 290px;
+
+                @media (min-width: 320px) and (max-width: 400px) {
+                    height: 90px !important;
+                }
+
+                @media (min-width: 400px) and (max-width: 529px) {
+                    height: 130px !important;
+                }
+
+                @media (min-width: 530px) and (max-width: 660px) {
+                    height: 170px !important;
+                }
+
+                @media (min-width: 665px) and (max-width: 1000px) {
+                    height: 220px !important;
+                }
+            }
+        }
+    }
+
+    .gall-wrapper-9 {
+        &:extend(.img-hover-zoom-effect all);
+        margin-top: 30px;
+
+        .img-wrapper {
+            display: inline-block;
+            width: 32.333333%;
+            margin-right: -4px;
+            margin-bottom: -6px;
+
+            .img {
+                background-size: cover !important;
+                background-position: center center !important;
+                height: 260px;
+
+                @media (min-width: 320px) and (max-width: 400px) {
+                    height: 90px !important;
+                }
+
+                @media (min-width: 400px) and (max-width: 529px) {
+                    height: 130px !important;
+                }
+
+                @media (min-width: 530px) and (max-width: 660px) {
+                    height: 170px !important;
+                }
+
+                @media (min-width: 665px) and (max-width: 1000px) {
+                    height: 220px !important;
+                }
+            }
+        }
+    }
+}
+
+
+//slowly color transition on button on hover
+//&:extend(.transition-on-hover all);
+.transition-on-hover {
+    transition: all 0.37s ease;
+}
+
+//slowly color transition on button on hover
+//&:extend(.transition-on-hover-image all);
+.transition-on-hover-image {
+    opacity: 0;
+    transition: opacity 0.30s linear;
+}
+
+
+/* 
+    Animated icon of show/hide in Accordion
+        <span class="collapse-icon" style="float: right;">
+            <i class="plus" aria-hidden="true"></i>
+            <i class="minus" aria-hidden="true"></i>
+        </span>
+*/
+
+.collapse-icon {
+    position: relative;
+    bottom: 6px;
+    display: inline-block;
+    float: right;
+
+    i {
+        display: inline-block;
+        border: solid thin;
+        position: absolute;
+        -webkit-transition: -webkit-transform .4s ease-in-out;
+        transition: transform .4s ease-in-out;
+
+
+        &.plus {
+            top: 9px;
+            right: 18px;
+            width: 1px;
+            height: 20px;
+        }
+
+        &.minus {
+            top: 18px;
+            right: 9px;
+            width: 20px;
+            height: 1px;
+        }
+    }
+
+    &.active {
+        i {
+            &:nth-child(1) {
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+.custom-checkbox {
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+    position: relative;
+    margin-right: 15px;
+    display: inline-block;
+
+    &.has-error {
+        .box {
+            border: none;
+            border: solid thin #a94442 !important;
+        }
+    }
+
+    .box {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: white;
+        outline: none;
+        box-shadow: none;
+        border: none;
+        border: solid thin #333333;
+        position: absolute;
+        
+        top: 10px;
+        margin: 0;
+        padding: 0;
+
+        &.checked {
+            content: "";
+
+            &:after {
+                position: absolute;
+                margin: 0;
+                padding: 0;
+                right: 1px;
+                bottom: -1px;
+                border-radius: 1px;
+                font-family: 'Glyphicons Halflings';
+                font-size: 11px;
+                content: "\e013";
+            }
+        }
+    }
+
+    label {
+        font-weight: normal;
+        margin-left: 30px;
+        position: relative;
+        top: 7.5px;
+        display: inline-block;
+
+        @media(max-width: @screen-xs-max) {
+            margin-left: 15px;
+        }
+
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .error-text, .errortext{
+        margin-top: 5px;
+        display: block;
+    }
+}
+
+.ajax-loader {
+    position: absolute;
+    display: block;
+    z-index: 999;
+    top: 45%;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.form-group {
+    position: relative;
+
+    &.has-feedback {
+        @feedback-color: #a94442;
+
+        .has-error {
+            outline: solid thin @feedback-color;
+            border: none !important;
+        }
+
+        .form-control-feedback {
+            color: @feedback-color;
+        }
+    }
+}
+
+
+
+// --------- ANIMATIONS ------------------
+
+
+.animated {
+    cursor: pointer;
+}
+
+//You can use it for HTML preview
+.scrollable-panel {
+    padding: 15px;
+    height: 300px;
+    overflow-y: scroll;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+
+
+//----------------------------------------
